@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  redis:
+    image: redis
+    # platform: linux/amd64 # Força o uso de amd64
+    ports:
+      - 6379:6379
+
+  server:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis

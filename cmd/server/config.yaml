@@ -1,0 +1,16 @@
+# All key names are converted to lowercase by Viper
+
+serverPort: :8080
+persistence:
+  redis: 
+    addr: redis:6379
+    password:
+    db: 0
+
+rateLimiter:
+  blockingDuration: 30s
+  ipMaxReqsPerSecond: 2
+  tokenConfigs:
+  # token: maxReqsPerSecond
+    - 'abcd12': 2
+    - 'abc321': 3
